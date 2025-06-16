@@ -1,0 +1,117 @@
+<html lang="BR PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" /> <!--dev icons-->  
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    <!-- icones do google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> <!-- fonts do google-->
+    <link rel="stylesheet" href="/static/css/cadastro.css">
+</head>
+<body class="jura">
+    <section id="menu" class="jura">
+        <div id="cal" onclick="text_info()">
+            <span class="material-icons" id="icones_menu" >menu</span>
+            <h3>Calculadora</h3>
+        </div>
+
+        <div id="cal_imc" class="flex" onclick="text_escala()">
+            <span class="material-icons + vermelho" id="icones" >bar_chart</span>
+            <p id="txt">Categorias </p>
+            <div id="barra"></div>
+        </div>
+
+         <div class="flex" onclick="text_limit()">
+            <span class="material-icons + azul"  id="icones" >favorite</span>
+            <p id="txt"> Limitaçõs </p>
+            <div id="barra"></div>
+        </div>
+
+        <div class="flex" onclick="text_cal()">
+            <span class="material-icons + amarelo"  id="icones" >calculate</span>
+            <p id="txt"> Calculo </p>
+            <div id="barra"></div>
+        </div>
+    </section>
+        
+    <div id="central">
+
+        <section id="visualizar_info">
+            <p id="receber_info"></p>
+        </section>
+
+        <form id="form1">
+            <div id="info01">
+                <label for="name" id="name"> Qual é seu nome? </label>
+                <input type="text" id="nome" name="nome" maxlength="12" placeholder=" Seu nome aqui"
+                required>
+                    
+                <label for="altura" id="alt"> Qual é a sua altura. </label>
+                <input type="number" id="altura" name="altura" step="0.01" max="2,30" min="0,30" placeholder="Ex: 1,75" required>   
+            </div>
+            <div id="btns">
+                <label for="genero">Gênero:</label>
+                <div id="icon">
+                    <button type="button" class="material-icons" name="genero" id="man" onclick="cor_azul(), genero_masculino(), resetarBonecosFem()">man</button>
+                   <button type="button" class="material-icons" name="genero" id="woman" onclick="cor_rosa(), genero_feminino(), resetarBonecosMAs() ">woman</button>
+                </div>
+            </div>    
+            <div id="btn">
+                <input type="button" value="Abrir calculadora" id="enviar" onclick=" coletar_dados(), exibir_dados(), trasition01()">
+                <input type="reset" value="Redefinir" id="reset">
+            </div>       
+        </form>
+
+        <form id="calculadora">
+            <div id="info"> <!-- div para mostrar as informações-->
+                <span class="material-icons + arrow_back" onclick="trasition02()">arrow_back</span>
+                <p id="user_nome">nome</p>
+                <p id="user_altura">altura</p>
+                <span id="span_icon" class="material-icons"></span>
+            </div>
+            <div id="coleta_peso"> <!-- espaço para coleta do peso do usuário-->
+                <label for="peso">Seu peso aqui:</label>
+                <input type="number" name="peso" id="peso" step="0.01" required>
+                <input type="submit" value="Calcular" id="btn_calcular" onclick="" onclick="nulo()">
+            </div>
+
+            <div id="display"> <!-- exibição dos calculos -->
+                <div id="box">
+                    <div id="resultado_IMC">
+                        <p id="peso01"></p>
+                    </div>
+                    <div id="descricao_imc">
+                        <p>Seu IMC</p>
+                    </div>
+                </div>    
+                <div id="visualizar_icons"> <!--Visualização dos bonecos-->
+                    <span class="material-icons" id="roxo"></span>
+                    <span class="material-icons" id="verde"></span></span>
+                    <span class="material-icons" id="laranja"></span>
+                    <span class="material-icons" id="vermelho"></span>
+                </div>
+                <div id="condicao"> <!--Condição do usuário-->
+                    <p id="abaixo"></p>
+                    <p id="normal"></p>
+                    <p id="acima"></p>
+                    <p id="obeso"></p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <div id="my_info">
+            <p>Desenvolvido por: <abbr class="addr">Iron de Oliveira Cardoso.</abbr></p>
+            <p>Email: <e class="addr">irondeoliveira3@gmail.com</e></p>
+        </div>
+        <div id="info_img">
+            <a href="https://www.linkedin.com/in/iron-de-oliveira"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" /></a> 
+            <a href="https://github.com/Iron-de-Oliveira"><img class="cor" src="/static/img/github-original.svg" /></a> 
+        </div>
+    </footer>
+
+    <script src="/static/js/cadastro.js"></script>
+</body>
+</html>
